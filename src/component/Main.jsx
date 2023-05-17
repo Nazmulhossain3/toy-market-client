@@ -4,7 +4,7 @@ import Navbar from '../Home/Navbar';
 
 const Main = () => {
     return (
-        <div>
+        <div className='px-8'>
             <Navbar></Navbar>
            <Outlet></Outlet>
         </div>

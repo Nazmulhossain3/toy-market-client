@@ -1,9 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const Navbar = () => {
     return (
-    <div className="navbar bg-base-300">
+    <div className="navbar bg-orange-50 rounded-lg">
   <div className="navbar-start">
   
     <div className="dropdown">
@@ -21,24 +21,24 @@ const Navbar = () => {
        
       </div>
     </div>
-    <div className='flex items-center gap-2'>
+    <div className='flex items-center gap-2 ml-4'>
     <img className='w-10 h-10 rounded-full' src="https://i.ibb.co/C9ZyF05/toy.jpg" alt="" />
-    <p className='text-orange-600 text-xl'>DollHaven.com</p>
+    <p className='text-orange-600 text-xl'>ToyHaven.com</p>
 
     </div>
   </div>
   <div className="navbar-center hidden lg:flex">
     <div  className="gap-4 menu menu-horizontal px-1">
-      <Link to='/'>Home</Link>
-       <Link to='/allToys'>All Toy</Link>
-      <Link to='/myToys'>My Toys</Link>
-       <Link to='/addToy'>Add Toy</Link>
-      <Link to='/blog'>Blogs</Link>
+      <NavLink to='/' className={({ isActive}) =>isActive ? "text-orange-600" : ""} >Home</NavLink>
+       <NavLink to='/allToys' className={({ isActive}) =>isActive ? "text-orange-600" : ""} >All Toy</NavLink>
+      <NavLink to='/myToys' className={({ isActive}) =>isActive ? "text-orange-600" : ""}>My Toys</NavLink>
+       <NavLink to='/addToy' className={({ isActive}) =>isActive ? "text-orange-600" : ""}>Add Toy</NavLink>
+      <NavLink to='/blog'className={({ isActive}) =>isActive ? "text-orange-600" : ""} >Blogs</NavLink>
      
     </div>
   </div>
-  <div className="navbar-end">
-  <button className="btn btn-sm btn-outline btn-success">Login</button>
+  <div className="navbar-end mr-6">
+  <button className="btn btn-sm btn-outline btn-warning">Login</button>
 
   </div>
 </div>

@@ -5,13 +5,13 @@ import Toy from './Toy';
 const AllToys = () => {
     const toys = useLoaderData()
     return (
-       <div>
+       <div className='p-12'>
        
 
-        <div className="overflow-x-auto">
-     <table className="table w-full">
+     <div className="overflow-x-auto rounded-2xl">
+     <table className="table w-full border-2 ">
     {/* head */}
-    <thead>
+    <thead className=''>
       <tr>
         <th>Toy Name</th>
         <th>Seller Name</th>

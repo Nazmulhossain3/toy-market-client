@@ -17,6 +17,7 @@ import ErrorPage from './component/Pages/ErrorPage';
 import Login from './component/Pages/Login';
 import AuthProvider from './component/Provider/AuthProvider';
 import Register from './component/Pages/Register';
+import Toydetails from './component/Pages/Toydetails';
 
 const router = createBrowserRouter([
   {
@@ -53,6 +54,11 @@ const router = createBrowserRouter([
       {
         path : '/register',
         element : <Register></Register>
+      },
+      {
+        path : '/allTeddy/:id',
+        element : <Toydetails></Toydetails>,
+        loader : ({params})=> fetch(`http://localhost:5000/allTeddy/${params.id}`)
       }
     
     ]

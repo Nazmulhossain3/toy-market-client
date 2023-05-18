@@ -14,6 +14,9 @@ import Mytoys from './component/Pages/Mytoys';
 import AddToy from './component/AddToy';
 import Blogs from './component/Pages/Blogs';
 import ErrorPage from './component/Pages/ErrorPage';
+import Login from './component/Pages/Login';
+import AuthProvider from './component/Provider/AuthProvider';
+import Register from './component/Pages/Register';
 
 const router = createBrowserRouter([
   {
@@ -41,6 +44,14 @@ const router = createBrowserRouter([
       {
         path : '/blog',
         element : <Blogs></Blogs>
+      },
+      {
+        path : '/login',
+        element : <Login></Login>
+      },
+      {
+        path : '/register',
+        element : <Register></Register>
       }
     
     ]
@@ -49,6 +60,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-   <RouterProvider router={router} />
+  <AuthProvider>
+  <RouterProvider router={router} />
+  </AuthProvider>
   </React.StrictMode>,
 )

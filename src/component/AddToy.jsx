@@ -1,5 +1,6 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
+import Swal from 'sweetalert2';
 
 
 const AddToy = () => {
@@ -9,6 +10,29 @@ const AddToy = () => {
     
     const onSubmit = data => {
         console.log(data)
+
+        fetch('http://localhost:5000/allTeddy',{
+
+        method : 'POST',
+        headers : {
+            'content-type' : 'application/json'
+        },
+        body : JSON.stringify(data)
+
+
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            if(data.insertedId){
+               Swal.fire({
+                  title: 'Success!',
+                  text: 'Wow you added a Toy',
+                  icon: 'success',
+                  confirmButtonText: 'Cool'
+                })
+            }
+        })
    
    
    

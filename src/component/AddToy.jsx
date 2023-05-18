@@ -55,7 +55,7 @@ const AddToy = () => {
       <div className=' flex gap-3 justify-center items-center mt-4'>
          {/* register your input into the hook by invoking the "register" function */}
     
-    <input  placeholder="seller name" className="input input-bordered input-accent w-full max-w-xs" defaultValue="" {...register("seller name")} />
+    <input  placeholder="seller name" className="input input-bordered input-accent w-full max-w-xs" defaultValue="" {...register("seller_name")} />
     
    
     <input  placeholder=" Toy photo" className="input input-bordered input-accent w-full max-w-xs" defaultValue="" {...register("photo")} />
@@ -67,7 +67,7 @@ const AddToy = () => {
          {/* register your input into the hook by invoking the "register" function */}
     
     
-        <select className="select w-full max-w-xs input input-bordered input-accent" {...register("Sub Category")}>
+        <select className="select w-full max-w-xs input input-bordered input-accent" {...register("Sub_Category")}>
        
         <option value="Cuddles">Cuddles</option>
         <option value="Honey Bear">Honey Bear</option>
@@ -86,14 +86,14 @@ const AddToy = () => {
     <input  placeholder="Rating" className="input input-bordered input-accent w-full max-w-xs" defaultValue="" {...register("Rating")} />
     
    
-    <input  placeholder="Available quantity" className="input input-bordered input-accent w-full max-w-xs" defaultValue="" {...register("Available quantity")} />
+    <input  placeholder="Available quantity" className="input input-bordered input-accent w-full max-w-xs" defaultValue="" {...register("Available_quantity")} />
 
        </div>
      
     <div className='  gap-3 justify-center items-center mt-4'>
          {/* register your input into the hook by invoking the "register" function */}
     
-    <input  placeholder="Detail description" className=" input input-bordered input-accent w-full max-w-xs" defaultValue="" {...register("Detail description")} />
+    <input  placeholder="Detail description" className=" input input-bordered input-accent w-full max-w-xs" defaultValue="" {...register("Detail_description")} />
     
    
     <input className='border-2 btn-wide btn  btn-accent mt-2' type="submit" />

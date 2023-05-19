@@ -5,7 +5,7 @@ import Footer from './Pages/Footer';
 
 const Main = () => {
     return (
-        <div className='px-8'>
+        <div className='px-8 shadow-2xl'>
             <Navbar></Navbar>
            <Outlet></Outlet>
            <Footer></Footer>

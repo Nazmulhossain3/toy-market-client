@@ -4,7 +4,7 @@ const Footer = () => {
     return (
         <footer className="footer p-4  bg-neutral text-neutral-content rounded-md mt-4 mb-4">
     <div>
-        <img className='h-16 w-16' src="https://i.ibb.co/C9ZyF05/toy.jpg" alt="" />
+        <img className='h-16 w-16 rounded-full' src="https://i.ibb.co/C9ZyF05/toy.jpg" alt="" />
     <p>ToyHavean.com<br/>Copyright © 2023 - All right reserved</p>
   </div> 
   <div>

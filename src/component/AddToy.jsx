@@ -1,9 +1,11 @@
-import React from 'react';
+import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import Swal from 'sweetalert2';
+import { AuthContext } from "./Provider/AuthProvider";
 
 
 const AddToy = () => {
+   const {user} = useContext(AuthContext)
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     
@@ -48,7 +50,7 @@ const AddToy = () => {
     <input  placeholder="Toy name" className="input input-bordered input-accent w-full max-w-xs" defaultValue="" {...register("name")} />
     
    
-    <input  placeholder="seller email" className="input input-bordered input-accent w-full max-w-xs" defaultValue="" {...register("email")} />
+    <input  placeholder="seller email" className="input input-bordered input-accent w-full max-w-xs" defaultValue={user?.email} {...register("email")} />
 
     </div>
    

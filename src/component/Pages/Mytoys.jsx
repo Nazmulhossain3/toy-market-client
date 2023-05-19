@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../Provider/AuthProvider';
 import { FaEdit, FaRegEdit, FaTrashAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const Mytoys = () => {
 
@@ -17,6 +18,41 @@ const Mytoys = () => {
 
 
     },[user])
+
+    
+
+        const handleDeleteToy = (_id) => {
+           
+            console.log(_id);
+            Swal.fire({
+              title: "Are you sure?",
+              text: "You won't be able to revert this!",
+              icon: "warning",
+              showCancelButton: true,
+              confirmButtonColor: "#3085d6",
+              cancelButtonColor: "#d33",
+              confirmButtonText: "Yes, delete it!",
+            }).then((result) => {
+              if (result.isConfirmed) {
+               
+                fetch(`http://localhost:5000/myTeddy/${_id}`,{
+                    method : 'DELETE'
+                })
+                  .then((res) => res.json())
+                  .then((data) => {
+                    console.log(data)
+                    if (data.deletedCount > 0) {
+                      Swal.fire("Deleted!", "Your file has been deleted.", "success");
+                        
+                      const remaining = toys.filter(toy => toy._id !== _id)
+                      setToys(remaining)
+                   
+                    }
+                  });
+              }
+            });
+          };
+
 
 
 
@@ -54,7 +90,7 @@ const Mytoys = () => {
        
         <td>
             <div className='flex gap-4'>
-                <FaTrashAlt className='text-xl'></FaTrashAlt>
+                <FaTrashAlt onClick={()=> handleDeleteToy(toy._id)} className='text-xl text-red-400'></FaTrashAlt>
              <Link to={`/myTeddy/${toy._id}`}><FaEdit className='text-xl'></FaEdit></Link>
             </div>
         </td>

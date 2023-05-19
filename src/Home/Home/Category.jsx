@@ -5,6 +5,8 @@ import 'react-tabs/style/react-tabs.css';
 
 const Category = () => {
     const [fuzzies,setFuzzies] = useState([])
+    const [snugglekins,setSnugglekins] = useState([])
+    const [honeyBears, setHoneyBears ] = useState([])
 
   
     useEffect(()=>{
@@ -13,9 +15,26 @@ const Category = () => {
         .then(data => {
             setFuzzies(data)
         })
-    },[])
+    },[fuzzies])
 
    
+    useEffect(()=>{
+        fetch('http://localhost:5000/newTeddy/Snugglekins')
+        .then(res => res.json())
+        .then(data => {
+            setSnugglekins(data)
+        })
+    
+    },[snugglekins])
+
+   useEffect(()=>{
+    fetch('http://localhost:5000/newTeddy/Honey%20Bear')
+    .then(res => res.json())
+    .then(data => {
+        setHoneyBears(data)
+    })
+
+   },[honeyBears])
    
    
     return (
@@ -32,28 +51,23 @@ const Category = () => {
        </TabList>
    
        <TabPanel>
-         <h2>Any content 1</h2>
-       </TabPanel>
-      
-       <TabPanel>
-         <h2>Any content 2</h2>
-       </TabPanel>
-     
-      
-       <TabPanel>
+        
+       <div className='grid md:grid-cols-3 gap-4 mt-6'>
          {
-            fuzzies.map(fuzzy => <div className=''>
+            honeyBears.map(honeyBear => <div className=''>
  
  
     <div className='tab-card'>
    
     <div className="card card-compact w-64 bg-base-100 shadow-xl">
-  <figure><img className='object-cover h-64' src={fuzzy.photo} alt="Shoes" /></figure>
+  <figure><img className='object-cover h-64' src={honeyBear.photo} alt="Shoes" /></figure>
   <div className="card-body">
-    <h2 className="card-title">Shoes!</h2>
-    <p>If a dog chews shoes whose shoes does he choose?</p>
-    <div className="card-actions justify-end">
-      <button className="btn btn-primary">Buy Now</button>
+    <h2 className="card-title">name :{honeyBear.name}</h2>
+    <h2 className="card-title">price :{honeyBear.price}</h2>
+    <p className="card-title">Rating :{honeyBear.Rating}</p>
+   
+    <div className="card-actions flex mx-auto w-full">
+      <button className="border-2 text-white  bg-green-500 px-6 w-64 py-2 rounded-xl">View Details</button>
     </div>
   </div>
     </div>
@@ -63,8 +77,80 @@ const Category = () => {
 
 
 
- </div>)
+           </div>)
          }
+        
+         </div>
+     
+     
+       </TabPanel>
+       
+    
+       <TabPanel>
+       <div className='grid md:grid-cols-3 gap-4 mt-6'>
+         {
+            snugglekins.map(snugglekin => <div className=''>
+ 
+ 
+    <div className='tab-card'>
+   
+    <div className="card card-compact w-64 bg-base-100 shadow-xl">
+  <figure><img className='object-cover h-64' src={snugglekin.photo} alt="Shoes" /></figure>
+  <div className="card-body">
+    <h2 className="card-title">name :{snugglekin.name}</h2>
+    <h2 className="card-title">price :{snugglekin.price}</h2>
+    <p className="card-title">Rating :{snugglekin.Rating}</p>
+   
+    <div className="card-actions flex mx-auto w-full">
+      <button className="border-2 text-white  bg-green-500 px-6 w-64 py-2 rounded-xl">View Details</button>
+    </div>
+  </div>
+    </div>
+    
+    </div>
+           
+
+
+
+           </div>)
+         }
+        
+         </div>
+       
+     
+     
+       </TabPanel>
+     
+         <TabPanel>
+         <div className='grid md:grid-cols-3 gap-4 mt-6'>
+         {
+            fuzzies.map(fuzzy => <div className=''>
+ 
+ 
+    <div className='tab-card'>
+   
+    <div className="card card-compact w-64 bg-base-100 shadow-xl">
+  <figure><img className='object-cover h-64' src={fuzzy.photo} alt="Shoes" /></figure>
+  <div className="card-body">
+    <h2 className="card-title">name :{fuzzy.name}</h2>
+    <h2 className="card-title">price :{fuzzy.price}</h2>
+    <p className="card-title">Rating :{fuzzy.Rating}</p>
+   
+    <div className="card-actions flex mx-auto w-full">
+      <button className="border-2 text-white  bg-green-500 px-6 w-64 py-2 rounded-xl">View Details</button>
+    </div>
+  </div>
+    </div>
+    
+    </div>
+           
+
+
+
+           </div>)
+         }
+        
+         </div>
        
        </TabPanel>
      

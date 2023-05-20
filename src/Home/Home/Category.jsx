@@ -1,9 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 
 import "react-tabs/style/react-tabs.css";
+import Swal from "sweetalert2";
+import { AuthContext } from "../../component/Provider/AuthProvider";
 
 const Category = () => {
+
+  const {user} = useContext(AuthContext)
+
+
   const [fuzzies, setFuzzies] = useState([]);
   const [snugglekins, setSnugglekins] = useState([]);
   const [honeyBears, setHoneyBears] = useState([]);
@@ -32,6 +39,44 @@ const Category = () => {
       });
   }, [honeyBears]);
 
+  const handleShowToast1 = () => {
+   if(!user?.email){
+    Swal.fire({
+      icon: 'info',
+      title: 'Oops...',
+      text: ' you have to log in first to view details',
+      footer: '<a href="">Please Login First</a>'
+    })
+   }
+    
+  }
+  const handleShowToast2 = () => {
+    if(!user?.email){
+      Swal.fire({
+        icon: 'info',
+        title: 'Oops...',
+        text: ' you have to log in first to view details',
+        footer: '<a href="">Please Login First</a>'
+      })
+     }
+
+  }
+  const handleShowToast3 = () => {
+    if(!user?.email){
+      Swal.fire({
+        icon: 'info',
+        title: 'Oops...',
+        text: ' you have to log in first to view details',
+        footer: '<a href="">Please Login First</a>'
+      })
+     }
+
+  }
+
+
+
+
+
   return (
     <div className="bg-orange-50">
       <h2 className=" font-bold text-center text-2xl text-orange-500">
@@ -50,7 +95,7 @@ const Category = () => {
             {honeyBears.map((honeyBear) => (
               <div className="">
                 <div className="tab-card">
-                  <div className="card card-compact w-64 bg-base-100 shadow-xl">
+                  <div className="card card-compact w-72 bg-base-100 shadow-xl">
                     <figure>
                       <img
                         className="object-cover h-48 rounded-lg"
@@ -64,9 +109,14 @@ const Category = () => {
                       <p className="">Rating :{honeyBear.Rating}</p>
 
                       <div className="card-actions flex mx-auto w-full">
-                        <button className="border-2 text-white  bg-green-500 px-6 w-64 py-2 rounded-xl">
+                      
+                      <Link to={`/allTeddy/${honeyBear._id}`}>
+                      <button onClick={handleShowToast1} className="border-2 text-white  bg-green-500 px-6 w-64 py-2 rounded-xl">
                           View Details
                         </button>
+                      </Link>
+                      
+                        
                       </div>
                     </div>
                   </div>
@@ -81,7 +131,7 @@ const Category = () => {
             {snugglekins.map((snugglekin) => (
               <div className="">
                 <div className="tab-card">
-                  <div className="card card-compact w-64 bg-base-100 shadow-xl">
+                  <div className="card card-compact w-72 bg-base-100 shadow-xl">
                     <figure>
                       <img
                         className="object-cover h-48 rounded-lg"
@@ -95,9 +145,12 @@ const Category = () => {
                       <p className="">Rating :{snugglekin.Rating}</p>
 
                       <div className="card-actions flex mx-auto w-full">
-                        <button className="border-2 text-white  bg-green-500 px-6 w-64 py-2 rounded-xl">
+                      <Link to={`/allTeddy/${snugglekin._id}`}>
+                      <button onClick={handleShowToast2} className="border-2 text-white  bg-green-500 px-6 w-64 py-2 rounded-xl">
                           View Details
                         </button>
+                      </Link>
+                      
                       </div>
                     </div>
                   </div>
@@ -112,7 +165,7 @@ const Category = () => {
             {fuzzies.map((fuzzy) => (
               <div className="">
                 <div className="tab-card">
-                  <div className="card card-compact w-64 bg-base-100 shadow-xl">
+                  <div className="card card-compact w-72 bg-base-100 shadow-xl">
                     <figure>
                       <img
                         className="object-cover h-48 rounded-lg"
@@ -126,9 +179,12 @@ const Category = () => {
                       <p className="">Rating :{fuzzy.Rating}</p>
 
                       <div className="card-actions flex mx-auto w-full">
-                        <button className="border-2 text-white  bg-green-500 px-6 w-64 py-2 rounded-xl">
+                      <Link to={`/allTeddy/${fuzzy._id}`}>
+                      <button onClick={handleShowToast3} className="border-2 text-white  bg-green-500 px-6 w-64 py-2 rounded-xl">
                           View Details
                         </button>
+                      </Link>
+                      
                       </div>
                     </div>
                   </div>

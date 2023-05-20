@@ -69,6 +69,7 @@ const Mytoys = () => {
         <th>Sub-category</th>
         <th>Price</th>
         <th>Available Quantity</th>
+        
         <th>Details</th>
 
       </tr>

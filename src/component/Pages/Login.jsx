@@ -1,13 +1,12 @@
 import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGithub, FaGoogle } from "react-icons/fa";
-import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import app from "../firebase/firebase.config";
 import { AuthContext } from "../Provider/AuthProvider";
 
 const auth = getAuth(app)
 const provider = new GoogleAuthProvider()
-const gitHubProvider = new GithubAuthProvider()
 
 const Login = () => {
   const [error, setError] = useState("");

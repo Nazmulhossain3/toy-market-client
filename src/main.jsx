@@ -19,6 +19,7 @@ import AuthProvider from './component/Provider/AuthProvider';
 import Register from './component/Pages/Register';
 import Toydetails from './component/Pages/Toydetails';
 import UpdateToys from './component/Pages/UpdateToys';
+import PrivateRoute from './component/Router/PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -37,16 +38,16 @@ const router = createBrowserRouter([
       },
       {
         path : '/myToys',
-        element : <Mytoys></Mytoys>
+        element : <PrivateRoute> <Mytoys></Mytoys></PrivateRoute>
       },
       {
         path : '/addToy',
-        element : <AddToy></AddToy>
+        element :<PrivateRoute> <AddToy></AddToy></PrivateRoute>
 
       },
       {
         path : '/blog',
-        element : <Blogs></Blogs>
+        element : <Blogs></Blogs>,
       },
       {
         path : '/login',
@@ -58,14 +59,13 @@ const router = createBrowserRouter([
       },
       {
         path : '/allTeddy/:id',
-        element : <Toydetails></Toydetails>,
+        element : <PrivateRoute><Toydetails></Toydetails></PrivateRoute>,
         loader : ({params})=> fetch(`http://localhost:5000/allTeddy/${params.id}`)
       },
 
       {
         path : '/myTeddy/:id',
         element : <UpdateToys></UpdateToys>,
-        // loader : ({params})=> fetch(`http://localhost:5000/myTeddy/${params.id}`)
       }
     
     ]

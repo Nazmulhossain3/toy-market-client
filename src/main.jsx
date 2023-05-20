@@ -60,7 +60,7 @@ const router = createBrowserRouter([
       {
         path : '/allTeddy/:id',
         element : <PrivateRoute><Toydetails></Toydetails></PrivateRoute>,
-        loader : ({params})=> fetch(`http://localhost:5000/allTeddy/${params.id}`)
+        loader : ({params})=> fetch(`https://toy-market-server-rho.vercel.app/allTeddy/${params.id}`)
       },
 
       {

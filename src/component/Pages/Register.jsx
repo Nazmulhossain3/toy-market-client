@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
+import useTitle from '../../Hook/useTitle';
 
 
 
@@ -8,6 +9,7 @@ const Register = () => {
     const navigate = useNavigate()
     const {createUser,userUpdate,logOut} = useContext(AuthContext)
     const [error,setError] = useState('')
+    useTitle('register')
     
     const handleSubmit = (event)=> {
         event.preventDefault()

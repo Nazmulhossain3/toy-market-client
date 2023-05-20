@@ -5,10 +5,12 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../component/Provider/AuthProvider";
+import useTitle from "../../Hook/useTitle";
 
 const Category = () => {
 
   const {user} = useContext(AuthContext)
+  useTitle('category')
 
 
   const [fuzzies, setFuzzies] = useState([]);
@@ -16,7 +18,7 @@ const Category = () => {
   const [honeyBears, setHoneyBears] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/newTeddy/Fuzzy")
+    fetch("https://toy-market-server-rho.vercel.app/newTeddy/Fuzzy")
       .then((res) => res.json())
       .then((data) => {
         setFuzzies(data);
@@ -24,7 +26,7 @@ const Category = () => {
   }, [fuzzies]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/newTeddy/Snugglekins")
+    fetch("https://toy-market-server-rho.vercel.app/newTeddy/Snugglekins")
       .then((res) => res.json())
       .then((data) => {
         setSnugglekins(data);
@@ -32,7 +34,7 @@ const Category = () => {
   }, [snugglekins]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/newTeddy/Honey%20Bear")
+    fetch("https://toy-market-server-rho.vercel.app/newTeddy/Honey%20Bear")
       .then((res) => res.json())
       .then((data) => {
         setHoneyBears(data);
@@ -78,8 +80,8 @@ const Category = () => {
 
 
   return (
-    <div className="bg-orange-50">
-      <h2 className=" font-bold text-center text-2xl text-orange-500">
+    <div className="bg-orange-50 font-serif">
+      <h2 className=" font-bold text-center text-2xl text-green-500">
         Choose more Teddy Bear by Category
       </h2>
 

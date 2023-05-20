@@ -4,10 +4,12 @@ import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import { AuthContext } from "../Provider/AuthProvider";
 import { useParams } from "react-router-dom";
+import useTitle from "../../Hook/useTitle";
 
 const UpdateToys = () => {
   const { user } = useContext(AuthContext);
   const { id } = useParams();
+  useTitle('updateToy')
   console.log(id);
 
   const {
@@ -20,7 +22,7 @@ const UpdateToys = () => {
   const onSubmit = (data) => {
     console.log(data);
 
-    fetch(`http://localhost:5000/myTeddy/${id}`, {
+    fetch(`https://toy-market-server-rho.vercel.app/myTeddy/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -43,9 +45,10 @@ const UpdateToys = () => {
 
   return (
     <form
-      className="border-2 w-1/2 p-12 mx-auto mt-6 mb-6 rounded-xl bg-base-200 shadow-xl"
+      className="border-2 font-serif w-1/2 p-12 mx-auto mt-6 mb-6 rounded-xl bg-base-200 shadow-xl"
       onSubmit={handleSubmit(onSubmit)}
     >
+      <h2 className="text-xl text-center text-green-500 font-serif">Update Your Toy</h2>
       <div className=" flex gap-3 justify-center items-center mt-4">
         {/* register your input into the hook by invoking the "register" function */}
         <input

@@ -2,7 +2,7 @@ import React from "react";
 
 const Favourite = () => {
   return (
-    <div>
+    <div className="font-serif">
         <h2 className=" bg-base-100 shadow-xl text-2xl text-center font-semibold">Most Favorite Teddy here</h2>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 p-12 gap-4 shadow-2xl ">
         <div className="card card-compact w-64 bg-base-100 shadow-xl">

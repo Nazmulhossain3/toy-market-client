@@ -3,14 +3,19 @@ import { AuthContext } from '../Provider/AuthProvider';
 import { FaEdit, FaRegEdit, FaTrashAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { useForm } from 'react-hook-form';
+import useTitle from '../../Hook/useTitle';
+
 
 const Mytoys = () => {
 
     const {user} = useContext(AuthContext)
     const [toys,setToys] = useState([])
+    useTitle('myToys')
+    // const [selected,setSelected] = useState('ascending')
 
     useEffect(()=> {
-        fetch(`http://localhost:5000/myTeddy/${user?.email}`)
+        fetch(`https://toy-market-server-rho.vercel.app/myTeddy/${user?.email}`)
         .then(res => res.json())
         .then(data => {
             setToys(data)
@@ -35,7 +40,7 @@ const Mytoys = () => {
             }).then((result) => {
               if (result.isConfirmed) {
                
-                fetch(`http://localhost:5000/myTeddy/${_id}`,{
+                fetch(`https://toy-market-server-rho.vercel.app/myTeddy/${_id}`,{
                     method : 'DELETE'
                 })
                   .then((res) => res.json())
@@ -54,12 +59,37 @@ const Mytoys = () => {
           };
 
 
+       
+
+   const { register, handleSubmit } = useForm();
+  const onSubmit = data => {
+    
+
+  };
+
+  
 
 
     return (
         <div>
          
-         <div className="overflow-x-auto rounded-2xl">
+        <form  onSubmit={handleSubmit(onSubmit)}>
+  
+      <div className='mt-6 '>
+      <select {...register("sort")} className="select select-bordered w-full max-w-xs">
+  <option value="ascending">ascending</option>
+  <option value="descending">descending</option>
+  
+  </select>
+ <input className='btn btn-outline btn-error ml-6 btn-sm' type="Submit" />
+  
+      </div>
+  </form>
+    
+    
+    
+    
+     <div className="overflow-x-auto rounded-2xl font-serif mt-4 mb-4 bg-base-200 shadow-2xl">
      <table className="table w-full border-2 ">
     {/* head */}
     <thead className=''>

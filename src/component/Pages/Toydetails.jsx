@@ -9,7 +9,7 @@ const Toydetails = () => {
 
     return (
 
-        <div>
+        <div className='font-serif'>
             
             {
                 toys.map(toy => <div className='p-10'>

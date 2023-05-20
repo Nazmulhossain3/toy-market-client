@@ -1,7 +1,9 @@
 import React from "react";
 import { FaRegArrowAltCircleDown } from "react-icons/fa";
+import useTitle from "../../Hook/useTitle";
 
 const Blogs = () => {
+  useTitle('blogs')
   return (
     <div className="grid md:grid-cols-2 gap-4 p-8 text-white shadow-2xl">
       <div className="  p-6 text-justify bg-green-600 rounded-lg mt-12 mx-auto">

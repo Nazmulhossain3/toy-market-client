@@ -2,11 +2,11 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="footer p-4  bg-neutral text-neutral-content rounded-md mt-4 mb-4">
+    <footer className="footer font-serif p-4  bg-neutral text-neutral-content rounded-md mt-4 mb-4">
       <div>
         <img
           className="h-16 w-16 rounded-full"
-          src="https://i.ibb.co/C9ZyF05/toy.jpg"
+          src="https://i.ibb.co/ZNMdfB8/toy.jpg"
           alt=""
         />
         <p>
@@ -18,9 +18,9 @@ const Footer = () => {
       <div>
         <span className="footer-title">Company</span>
         <a className="link link-hover">About us</a>
-        <a className="link link-hover">Contact</a>
+        <a className="link link-hover">Contact : 99005566</a>
         <a className="link link-hover">Address : Tejgaon, Dhaka-1212</a>
-        <a className="link link-hover">Email : toyhaven</a>
+        <a className="link link-hover">Email : toyhaven@gmail.com</a>
       </div>
       <div>
         <span className="footer-title">Social</span>

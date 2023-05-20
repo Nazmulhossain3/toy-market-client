@@ -4,6 +4,7 @@ import { FaGithub, FaGoogle } from "react-icons/fa";
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import app from "../firebase/firebase.config";
 import { AuthContext } from "../Provider/AuthProvider";
+import useTitle from "../../Hook/useTitle";
 
 const auth = getAuth(app)
 const provider = new GoogleAuthProvider()
@@ -17,6 +18,7 @@ const Login = () => {
   const navigate = useNavigate()
   const location = useLocation()
   const from = location.state?.from?.pathname || '/'
+  useTitle('login')
 
   const handleLogIn = (event) => {
     event.preventDefault();

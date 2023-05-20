@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Toy from './Toy';
+import useTitle from '../../Hook/useTitle';
 
 const AllToys = () => {
    
     const [toys,setToys] = useState([])
     const [searchText,setSearchText] = useState('')
+    useTitle('Alltoy')
     
   useEffect(()=>{
-    fetch('http://localhost:5000/allTeddy')
+    fetch('https://toy-market-server-rho.vercel.app/allTeddy')
     .then(res => res.json())
     .then(data => {
       setToys(data)
@@ -17,7 +19,7 @@ const AllToys = () => {
   
 
   const handleSearch = () => {
-  fetch(`http://localhost:5000/toySearch/${searchText}`)
+  fetch(`https://toy-market-server-rho.vercel.app/toySearch/${searchText}`)
   .then(res => res.json())
   .then(data => {
     setToys(data)
@@ -26,7 +28,7 @@ const AllToys = () => {
 }
     
     return (
-       <div className='px-12'>
+       <div className='px-12 font-serif'>
        
     <div className="form-control p-6">
   <div className="input-group">

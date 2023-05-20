@@ -2,10 +2,12 @@ import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import Swal from 'sweetalert2';
 import { AuthContext } from "./Provider/AuthProvider";
+import useTitle from "../Hook/useTitle";
 
 
 const AddToy = () => {
    const {user} = useContext(AuthContext)
+   useTitle('AddToy')
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     
@@ -13,7 +15,7 @@ const AddToy = () => {
     const onSubmit = data => {
         console.log(data)
 
-        fetch('http://localhost:5000/allTeddy',{
+        fetch('https://toy-market-server-rho.vercel.app/allTeddy',{
 
         method : 'POST',
         headers : {
@@ -42,8 +44,8 @@ const AddToy = () => {
 
     return (
         /* "handleSubmit" will validate your inputs before invoking "onSubmit" */
-    <form className='border-2 w-1/2 p-12 mx-auto mt-6 mb-6 rounded-xl bg-base-200 shadow-xl' onSubmit={handleSubmit(onSubmit)}>
-    
+    <form className=' font-serif border-2 w-1/2 p-12 mx-auto mt-6 mb-6 rounded-xl bg-base-200 shadow-xl' onSubmit={handleSubmit(onSubmit)}>
+      <h2 className="text-xl text-center text-green-500 font-serif">Add your Toy</h2> <hr />
       <div className=' flex gap-3 justify-center items-center mt-6'>
          {/* register your input into the hook by invoking the "register" function */}
     

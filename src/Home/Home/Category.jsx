@@ -46,22 +46,22 @@ const Category = () => {
         </TabList>
 
         <TabPanel>
-          <div className="grid md:grid-cols-3 gap-4 mt-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
             {honeyBears.map((honeyBear) => (
               <div className="">
                 <div className="tab-card">
                   <div className="card card-compact w-64 bg-base-100 shadow-xl">
                     <figure>
                       <img
-                        className="object-cover h-64"
+                        className="object-cover h-48 rounded-lg"
                         src={honeyBear.photo}
                         alt="Shoes"
                       />
                     </figure>
                     <div className="card-body">
-                      <h2 className="card-title">name :{honeyBear.name}</h2>
-                      <h2 className="card-title">price :{honeyBear.price}</h2>
-                      <p className="card-title">Rating :{honeyBear.Rating}</p>
+                      <h2 className="">name :{honeyBear.name}</h2>
+                      <h2 className="">price :{honeyBear.price}</h2>
+                      <p className="">Rating :{honeyBear.Rating}</p>
 
                       <div className="card-actions flex mx-auto w-full">
                         <button className="border-2 text-white  bg-green-500 px-6 w-64 py-2 rounded-xl">
@@ -77,22 +77,22 @@ const Category = () => {
         </TabPanel>
 
         <TabPanel>
-          <div className="grid md:grid-cols-3 gap-4 mt-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
             {snugglekins.map((snugglekin) => (
               <div className="">
                 <div className="tab-card">
                   <div className="card card-compact w-64 bg-base-100 shadow-xl">
                     <figure>
                       <img
-                        className="object-cover h-64"
+                        className="object-cover h-48 rounded-lg"
                         src={snugglekin.photo}
                         alt="Shoes"
                       />
                     </figure>
                     <div className="card-body">
-                      <h2 className="card-title">name :{snugglekin.name}</h2>
-                      <h2 className="card-title">price :{snugglekin.price}</h2>
-                      <p className="card-title">Rating :{snugglekin.Rating}</p>
+                      <h2 className="">name :{snugglekin.name}</h2>
+                      <h2 className="">price :{snugglekin.price}</h2>
+                      <p className="">Rating :{snugglekin.Rating}</p>
 
                       <div className="card-actions flex mx-auto w-full">
                         <button className="border-2 text-white  bg-green-500 px-6 w-64 py-2 rounded-xl">
@@ -108,22 +108,22 @@ const Category = () => {
         </TabPanel>
 
         <TabPanel>
-          <div className="grid md:grid-cols-3 gap-4 mt-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
             {fuzzies.map((fuzzy) => (
               <div className="">
                 <div className="tab-card">
                   <div className="card card-compact w-64 bg-base-100 shadow-xl">
                     <figure>
                       <img
-                        className="object-cover h-64"
+                        className="object-cover h-48 rounded-lg"
                         src={fuzzy.photo}
                         alt="Shoes"
                       />
                     </figure>
                     <div className="card-body">
-                      <h2 className="card-title">name :{fuzzy.name}</h2>
-                      <h2 className="card-title">price :{fuzzy.price}</h2>
-                      <p className="card-title">Rating :{fuzzy.Rating}</p>
+                      <h2 className="">name :{fuzzy.name}</h2>
+                      <h2 className="">price :{fuzzy.price}</h2>
+                      <p className="">Rating :{fuzzy.Rating}</p>
 
                       <div className="card-actions flex mx-auto w-full">
                         <button className="border-2 text-white  bg-green-500 px-6 w-64 py-2 rounded-xl">

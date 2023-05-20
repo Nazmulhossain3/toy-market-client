@@ -5,7 +5,7 @@ const Gallery = () => {
         <div className='bg-orange-50 py-4'>
             <h2 className='text-center text-2xl font-bold'>Choose your Little Angel</h2>
           
-            <div className=' text-center grid grid-cols-1 md:grid-cols-3 gap-6 p-6'>
+            <div className=' text-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6'>
            <span>
            <img className=' sm:mr-12 w-96 h-64 rounded-xl' src="https://c8.alamy.com/zooms/9/9d4b6c98c14f4b52b52e388084119c52/kg28m0.jpg" alt="" />
             <p>name : Lily</p>

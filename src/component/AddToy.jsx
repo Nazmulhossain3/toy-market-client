@@ -80,7 +80,7 @@ const AddToy = () => {
       </select>
     
    
-    <input  placeholder="Price" className="input input-bordered input-accent w-full max-w-xs" defaultValue="" {...register("price")} />
+    <input type="number" placeholder="Price" className="input input-bordered input-accent w-full max-w-xs" defaultValue="" {...register("price")} />
 
        </div>
 

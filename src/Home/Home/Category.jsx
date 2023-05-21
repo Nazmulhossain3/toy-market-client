@@ -107,7 +107,7 @@ const Category = () => {
                     </figure>
                     <div className="card-body">
                       <h2 className="">name :{honeyBear.name}</h2>
-                      <h2 className="">price :{honeyBear.price}</h2>
+                      <h2 className="">price : ${honeyBear.price}</h2>
                       <p className="">Rating :{honeyBear.Rating}</p>
 
                       <div className="card-actions flex mx-auto w-full">
@@ -143,7 +143,7 @@ const Category = () => {
                     </figure>
                     <div className="card-body">
                       <h2 className="">name :{snugglekin.name}</h2>
-                      <h2 className="">price :{snugglekin.price}</h2>
+                      <h2 className="">price : ${snugglekin.price}</h2>
                       <p className="">Rating :{snugglekin.Rating}</p>
 
                       <div className="card-actions flex mx-auto w-full">
@@ -177,7 +177,7 @@ const Category = () => {
                     </figure>
                     <div className="card-body">
                       <h2 className="">name :{fuzzy.name}</h2>
-                      <h2 className="">price :{fuzzy.price}</h2>
+                      <h2 className="">price : ${fuzzy.price}</h2>
                       <p className="">Rating :{fuzzy.Rating}</p>
 
                       <div className="card-actions flex mx-auto w-full">

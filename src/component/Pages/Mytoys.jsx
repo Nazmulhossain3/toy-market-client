@@ -12,7 +12,8 @@ const Mytoys = () => {
     const {user} = useContext(AuthContext)
     const [toys,setToys] = useState([])
     useTitle('myToys')
-    // const [selected,setSelected] = useState('ascending')
+   
+   
 
     useEffect(()=> {
         fetch(`https://toy-market-server-rho.vercel.app/myTeddy/${user?.email}`)
@@ -63,8 +64,7 @@ const Mytoys = () => {
 
    const { register, handleSubmit } = useForm();
   const onSubmit = data => {
-    
-
+    console.log(data)
   };
 
   
@@ -76,7 +76,7 @@ const Mytoys = () => {
         <form  onSubmit={handleSubmit(onSubmit)}>
   
       <div className='mt-6 '>
-      <select {...register("sort")} className="select select-bordered w-full max-w-xs">
+      <select  {...register("sort")} className="select select-bordered w-full max-w-xs">
   <option value="ascending">ascending</option>
   <option value="descending">descending</option>
   

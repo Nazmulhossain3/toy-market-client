@@ -52,6 +52,7 @@ const UpdateToys = () => {
       <div className=" flex gap-3 justify-center items-center mt-4">
         {/* register your input into the hook by invoking the "register" function */}
         <input
+          type="number"
           placeholder="Price"
           className="input input-bordered input-accent w-full max-w-xs"
           defaultValue=""

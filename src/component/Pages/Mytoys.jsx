@@ -3,7 +3,6 @@ import { AuthContext } from '../Provider/AuthProvider';
 import { FaEdit, FaRegEdit, FaTrashAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
-import { useForm } from 'react-hook-form';
 import useTitle from '../../Hook/useTitle';
 
 
@@ -11,19 +10,20 @@ const Mytoys = () => {
 
     const {user} = useContext(AuthContext)
     const [toys,setToys] = useState([])
+    const [sortValue, setSortValue] = useState('');
+    console.log(sortValue)
+
     useTitle('myToys')
    
    
 
     useEffect(()=> {
-        fetch(`https://toy-market-server-rho.vercel.app/myTeddy/${user?.email}`)
+        fetch(`https://toy-market-server-rho.vercel.app/myTeddy/${user?.email}?sort=${sortValue}`)
         .then(res => res.json())
-        .then(data => {
-            setToys(data)
-        })
+        .then(data => setToys(data))
 
 
-    },[user])
+    },[user?.email,sortValue])
 
     
 
@@ -62,31 +62,27 @@ const Mytoys = () => {
 
        
 
-   const { register, handleSubmit } = useForm();
-  const onSubmit = data => {
-    console.log(data)
-  };
+  //  const { register, handleSubmit } = useForm();
+  // const onSubmit = data => {
+  //   setSortOrder()
+   
+  // };
 
+  // const handleSortChange = (event) => {
+
+  //   setSortValue(event.target.value);
   
+  // };
 
 
     return (
         <div>
          
-        <form  onSubmit={handleSubmit(onSubmit)}>
-  
-      <div className='mt-6 '>
-      <select  {...register("sort")} className="select select-bordered w-full max-w-xs">
-  <option value="ascending">ascending</option>
-  <option value="descending">descending</option>
-  
-  </select>
- <input className='btn btn-outline btn-error ml-6 btn-sm' type="Submit" />
-  
-      </div>
-  </form>
-    
-    
+       
+<select  onChange={(e)=> setSortValue(e.target.value)}>
+  <option  value="ascending">Ascending</option>
+  <option value="descending">Descending</option>
+</select>
     
     
      <div className="overflow-x-auto rounded-2xl font-serif mt-4 mb-4 bg-base-200 shadow-2xl">

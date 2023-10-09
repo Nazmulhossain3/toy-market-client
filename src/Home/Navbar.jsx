@@ -11,7 +11,7 @@ const Navbar = () => {
 
 
     return (
-    <div className="navbar bg-orange-50 rounded-lg">
+    <div className="navbar">
   <div className="navbar-start">
   
     <div className="dropdown">
@@ -53,7 +53,7 @@ const Navbar = () => {
   </div>
   <div className="navbar-end mr-6">
 
-  {user ? 
+  {user?.email ?
               <div className="w-10 rounded-full">
                 <img
                   title={user.displayName}
@@ -64,6 +64,8 @@ const Navbar = () => {
              : 
              <Link to='/login'> <button className="btn btn-sm btn-outline btn-warning">Login</button>
              </Link>
+            
+            
             }
   
   

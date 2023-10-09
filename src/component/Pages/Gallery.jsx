@@ -2,34 +2,39 @@ import React from 'react';
 
 const Gallery = () => {
     return (
-        <div className='bg-orange-50 py-4 font-serif'>
-            <h2 className='text-center text-2xl font-bold font-serif '>Choose your Little Angel</h2>
+        <div className=' py-4 font-serif'>
+            <h2 className='text-center text-2xl font-bold  '>Choose your Little Angel</h2>
           
-            <div className=' text-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6'>
-           <span>
-           <img className=' sm:mr-12 w-96 h-64 rounded-xl' src="https://c8.alamy.com/zooms/9/9d4b6c98c14f4b52b52e388084119c52/kg28m0.jpg" alt="" />
+            <div className=' text-center grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 p-10'>
+           <div>
+           <img className=' sm:mr-12 lg:w-96 h-64 rounded-xl' src="https://cdn.pixabay.com/photo/2018/08/11/22/53/teddy-bear-3599680_1280.jpg" alt="" />
             <p className='font-serif'>name : Lily</p>
-           </span>
-           <span>
-           <img className=' sm:mr-12 w-96 h-64 rounded-xl' src="https://media.istockphoto.com/id/1300713458/photo/two-teddy-bears-on-sea-rock.jpg?s=612x612&w=0&k=20&c=gPe2DCHAmaL9s8_CKruJFaGvYw7f0z4iTwrRsT6mNtI=" alt="" />
+           </div>
+        
+           <div>
+           <img className=' sm:mr-12 lg:w-full h-64 rounded-xl' src="https://cdn.pixabay.com/photo/2016/04/19/15/23/teddy-1338895_1280.jpg" alt="" />
             <p className='font-serif'>Name : Oliver</p>
-           </span>
-           <span>
-           <img className=' sm:mr-12 w-96 h-64 rounded-xl' src="https://m.media-amazon.com/images/I/415MmbwvXSL.jpg" alt="" />
+           </div>
+        
+           <div>
+           <img className=' sm:mr-12 lg:w-full h-64 rounded-xl' src="https://cdn.pixabay.com/photo/2016/11/18/16/16/teddy-bear-1835598_1280.jpg" alt="" />
             <p >Name : Bella</p>
-           </span>
-           <span>
-           <img className=' sm:mr-12 w-96 h-64 rounded-xl' src="https://m.media-amazon.com/images/I/511NIniSp+S._SX466_.jpg" alt="" />
+           </div>
+         
+           <div>
+           <img className=' sm:mr-12 lg:w-full h-64 rounded-xl' src="https://cdn.pixabay.com/photo/2017/07/31/14/42/green-2558204_1280.jpg" alt="" />
             <p>Name : Max </p>
-           </span>
-           <span>
-           <img className=' sm:mr-12 w-96 h-64 rounded-xl' src="https://m.media-amazon.com/images/I/615YVshMeKL._SX466_.jpg" alt="" />
+           </div>
+         
+           <div>
+           <img className=' sm:mr-12 lg:w-full h-64 rounded-xl' src="https://cdn.pixabay.com/photo/2018/10/10/23/31/teddy-3738656_1280.jpg" alt="" />
             <p>Name : Ava</p>
-           </span>
-           <span>
-           <img className=' sm:mr-12 w-96 h-64 rounded-xl' src="https://m.media-amazon.com/images/I/61tNEKnBdbL._SX569_.jpg" alt="" />
+           </div>
+         
+           <div>
+           <img className=' sm:mr-12 lg:w-full lg:h-64 rounded-xl' src="https://cdn.pixabay.com/photo/2015/06/04/16/22/teddy-bear-797577_1280.jpg" alt="" />
             <p>Name : Charlie</p>
-           </span>
+           </div>
             </div>
         </div>
     );

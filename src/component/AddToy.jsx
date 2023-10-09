@@ -97,10 +97,10 @@ const AddToy = () => {
     <div className='  gap-3 justify-center items-center mt-4'>
          {/* register your input into the hook by invoking the "register" function */}
     
-    <input  placeholder="Detail description" className=" input input-bordered input-accent w-full max-w-xs" defaultValue="" {...register("Detail_description")} />
+    <input  placeholder="Detail description" className=" input input-bordered w-full input-accent " defaultValue="" {...register("Detail_description")} />
     
    
-    <input className='border-2 btn-wide btn  btn-accent mt-2' type="submit" />
+    <input className='border-2 w-full btn-wide btn  btn-accent mt-2' type="submit" />
 
        </div>
      

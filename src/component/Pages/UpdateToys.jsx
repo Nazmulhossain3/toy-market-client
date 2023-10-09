@@ -48,13 +48,13 @@ const UpdateToys = () => {
       className="border-2 font-serif w-1/2 p-12 mx-auto mt-6 mb-6 rounded-xl bg-base-200 shadow-xl"
       onSubmit={handleSubmit(onSubmit)}
     >
-      <h2 className="text-xl text-center text-green-500 font-serif">Update Your Toy</h2>
+      <h2 className="text-2xl text-center text-green-500 font-serif font-bold">Update Your Toy</h2>
       <div className=" flex gap-3 justify-center items-center mt-4">
         {/* register your input into the hook by invoking the "register" function */}
         <input
           type="number"
           placeholder="Price"
-          className="input input-bordered input-accent w-full max-w-xs"
+          className="input input-bordered input-accent w-full "
           defaultValue=""
           {...register("price")}
         />
@@ -65,24 +65,24 @@ const UpdateToys = () => {
 
         <input
           placeholder="Available quantity"
-          className="input input-bordered input-accent w-full max-w-xs"
+          className="input input-bordered input-accent w-full "
           defaultValue=""
           {...register("Available_quantity")}
         />
       </div>
 
-      <div className="ml-11 mt-4">
+      <div className=" mt-4">
         {/* register your input into the hook by invoking the "register" function */}
 
         <input
           placeholder="Detail description"
-          className=" input input-bordered input-accent w-full max-w-xs"
+          className=" input input-bordered input-accent w-full "
           defaultValue=""
           {...register("Detail_description")}
         />
 
         <input
-          className="border-2 btn-wide btn  btn-accent mt-2"
+          className="border-2 w-full btn-wide btn  btn-accent mt-2"
           type="submit"
         />
       </div>
